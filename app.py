@@ -30,6 +30,7 @@ data = [go.Scattermapbox(
             ),
 )]
 myheading1 = 'Ghana Health Facilities'
+tabtitle = 'Ghana'
 
 ########## Set up the chart
 
