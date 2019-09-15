@@ -21,7 +21,6 @@ df.rename(columns={
 fig = go.Figure(data=go.Scattergeo(
         lon = df['longitude'],
         lat = df['latitude'],
-        text = df['facilityname'],
         mode = 'markers',
         dict(
             size = 8,
@@ -31,11 +30,9 @@ fig = go.Figure(data=go.Scattergeo(
             symbol = 'square',
             line = dict(
                 width=1,
-                color='rgba(102, 102, 102)'
-            )
+                color='rgba(102, 102, 102)')
         )
-    )
-)
+))
 
 
 ########## Set up the chart
