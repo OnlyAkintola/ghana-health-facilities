@@ -18,30 +18,34 @@ df.rename(columns={
     'Longitude' : 'longitude',
 },inplace=True)
 
-shaz13_custom_style = "mapbox://styles/mapbox/streets-v11"
-data = [go.Scattergeo(
-            lat= df['latitude'] ,
-            lon= df['longitude'],
-            text = df['facilityname'],
-            mode='markers',
-            marker=go.scattermapbox.Marker(
-            size=10
+fig = go.Figure(data=go.Scattergeo(
+        lon = df['longitude'],
+        lat = df['latitude'],
+        text = df['facilityname'],
+        mode = 'markers',
+        dict(
+            size = 8,
+            opacity = 0.8,
+            reversescale = True,
+            autocolorscale = False,
+            symbol = 'square',
+            line = dict(
+                width=1,
+                color='rgba(102, 102, 102)'
+            )
+        )
+    )
+)
 
-            ),
-)]
-myheading1 = 'Ghana Health Facilities'
-tabtitle = 'Ghana'
 
 ########## Set up the chart
 
-layout = go.Layout(
+layout = go.update_layout(
             autosize=False,
             width=900,
             height=600,
             title = "Ghana",
             geo_scope='africa')
-
-fig = dict(data=data, layout=layout)
 
 ########### Initiate the app
 
