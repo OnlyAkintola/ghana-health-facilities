@@ -35,16 +35,17 @@ tabtitle = 'Ghana'
 ########## Set up the chart
 
 layout = go.Layout(autosize=False,
-                   mapbox= dict(accesstoken="pk.eyJ1IjoiYWtpbnRvbGEiLCJhIjoiY2swazZ1ODR6MGllcDNjcXM1ZzJqdDFrNiJ9.qMY4G68kqD_5BLa0tqq9bw",
-                                bearing=10,
-                                pitch=60,
-                                zoom=5,
-                                center= dict(lat=7.9465,
-                                             lon=1.0232),
-                                style=shaz13_custom_style),
+                    # mapbox= dict(accesstoken="pk.eyJ1IjoiYWtpbnRvbGEiLCJhIjoiY2swazZ1ODR6MGllcDNjcXM1ZzJqdDFrNiJ9.qMY4G68kqD_5BLa0tqq9bw",
+                    #             bearing=10,
+                    #             pitch=60,
+                    #             zoom=5,
+                    #             center= dict(lat=7.9465,
+                    #                          lon=1.0232),
+                    #             style=shaz13_custom_style),
                     width=900,
                     height=600,
-                    title = "Ghana")
+                    title = "Ghana",
+                    geo_scope='africa')
 
 fig = dict(data=data, layout=layout)
 
