@@ -19,7 +19,7 @@ df.rename(columns={
 },inplace=True)
 
 shaz13_custom_style = "mapbox://styles/mapbox/streets-v11"
-data = [go.Scattermapbox(
+data = [go.Scattergeo(
             lat= df['latitude'] ,
             lon= df['longitude'],
             text = df['facilityname'],
@@ -34,18 +34,12 @@ tabtitle = 'Ghana'
 
 ########## Set up the chart
 
-layout = go.Layout(autosize=False,
-                    # mapbox= dict(accesstoken="pk.eyJ1IjoiYWtpbnRvbGEiLCJhIjoiY2swazZ1ODR6MGllcDNjcXM1ZzJqdDFrNiJ9.qMY4G68kqD_5BLa0tqq9bw",
-                    #             bearing=10,
-                    #             pitch=60,
-                    #             zoom=5,
-                    #             center= dict(lat=7.9465,
-                    #                          lon=1.0232),
-                    #             style=shaz13_custom_style),
-                    width=900,
-                    height=600,
-                    title = "Ghana",
-                    geo_scope='africa')
+layout = go.Layout(
+            autosize=False,
+            width=900,
+            height=600,
+            title = "Ghana",
+            geo_scope='africa')
 
 fig = dict(data=data, layout=layout)
 
@@ -62,8 +56,7 @@ app.layout = html.Div(children=[
         id='figure-1',
         figure=fig
     )
-    ]
-)
+])
 
 ############ Deploy
 if __name__ == '__main__':
