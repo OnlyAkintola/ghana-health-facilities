@@ -49,8 +49,8 @@ layout = go.Layout(autosize=False,
 fig = dict(data=data, layout=layout)
 
 ########### Initiate the app
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+app = dash.Dash(__name__)
 server = app.server
 app.title=tabtitle
 
