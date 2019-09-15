@@ -56,12 +56,13 @@ app.title=tabtitle
 
 ########### Set up the layout
 app.layout = html.Div(children=[
-    html.H1(myheading1)
+    html.H1(myheading1),
     dcc.Graph(
-        id='ghana_graph',
+        id='figure-1',
         figure=fig
     )
-])
+    ]
+)
 
 ############ Deploy
 if __name__ == '__main__':
